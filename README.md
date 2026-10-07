@@ -1,5 +1,7 @@
 # 🧩 Excel Agent Engine
 
+🔗 **Live demo:** "https://excel-agent-engine-gokkyvfdof7dehwgau3gvm.streamlit.app/"
+
 > **One agent. Ten workflows. Zero hard-coded chatbots.**
 > The Excel file *is* the workflow catalog. Python tools do the work. An LLM decides which workflow to run.
 
