@@ -1,0 +1,3 @@
+order_id,carrier,tracking_number,shipment_status,eta
+ORD-1001,BlueDart,BD123456789,In Transit,2026-10-09
+ORD-1003,Delhivery,DL987654321,Delivered,2026-10-01

@@ -1,0 +1,5 @@
+order_id,customer_email,items,status,order_date
+ORD-1001,riya@example.com,Cotton T-Shirt White x2; Denim Jeans Blue x1,Shipped,2026-10-02
+ORD-1002,aman@example.com,Running Shoes Black x1,Processing,2026-10-05
+ORD-1003,neha@example.com,Leather Wallet Brown x1; Wool Scarf Grey x1,Delivered,2026-09-28
+ORD-1004,karan@example.com,Hooded Sweatshirt x1,Cancelled,2026-10-01

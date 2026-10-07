@@ -1,0 +1,167 @@
+{
+  "request": "Which workflows are failing most often?",
+  "workflow_id": "WF010",
+  "workflow_name": "Workflow Performance Report",
+  "selection_reason": "Keyword match on 'Workflow Performance Report'.",
+  "confidence": 0.7,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Load execution logs",
+      "status": "ok",
+      "detail": "200 log rows (sample logs)",
+      "duration_ms": 1
+    },
+    {
+      "name": "Calculate success / failure rate",
+      "status": "ok",
+      "detail": "overall failure rate 5.5%",
+      "duration_ms": 5
+    },
+    {
+      "name": "Calculate average execution time",
+      "status": "ok",
+      "detail": "slowest avg = 1996 ms",
+      "duration_ms": 0
+    },
+    {
+      "name": "Identify frequent errors",
+      "status": "ok",
+      "detail": "3 distinct error types",
+      "duration_ms": 1
+    },
+    {
+      "name": "Identify slow steps",
+      "status": "ok",
+      "detail": "4 workflows flagged",
+      "duration_ms": 1
+    },
+    {
+      "name": "Generate recommendations",
+      "status": "ok",
+      "detail": "5 recommendations",
+      "duration_ms": 2
+    }
+  ],
+  "output": {
+    "metrics_per_workflow": [
+      {
+        "workflow_id": "WF003",
+        "runs": 20,
+        "failures": 5,
+        "failure_rate_pct": 25.0,
+        "avg_ms": 992.0,
+        "flag": true
+      },
+      {
+        "workflow_id": "WF005",
+        "runs": 20,
+        "failures": 3,
+        "failure_rate_pct": 15.0,
+        "avg_ms": 250.0,
+        "flag": true
+      },
+      {
+        "workflow_id": "WF007",
+        "runs": 20,
+        "failures": 3,
+        "failure_rate_pct": 15.0,
+        "avg_ms": 1866.0,
+        "flag": true
+      },
+      {
+        "workflow_id": "WF001",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 317.0,
+        "flag": false
+      },
+      {
+        "workflow_id": "WF002",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 358.0,
+        "flag": false
+      },
+      {
+        "workflow_id": "WF004",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 1996.0,
+        "flag": true
+      },
+      {
+        "workflow_id": "WF006",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 628.0,
+        "flag": false
+      },
+      {
+        "workflow_id": "WF008",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 499.0,
+        "flag": false
+      },
+      {
+        "workflow_id": "WF009",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 376.0,
+        "flag": false
+      },
+      {
+        "workflow_id": "WF010",
+        "runs": 20,
+        "failures": 0,
+        "failure_rate_pct": 0.0,
+        "avg_ms": 697.0,
+        "flag": false
+      }
+    ],
+    "most_failing": [
+      {
+        "workflow_id": "WF003",
+        "failure_rate_pct": 25.0
+      },
+      {
+        "workflow_id": "WF005",
+        "failure_rate_pct": 15.0
+      },
+      {
+        "workflow_id": "WF007",
+        "failure_rate_pct": 15.0
+      }
+    ],
+    "frequent_errors": {
+      "ValueError: Required column(s) not found": 5,
+      "No order found": 3,
+      "NeedsInput: dates missing": 3
+    },
+    "steps_that_fail_most": {
+      "Validate required fields": 5,
+      "Search order data": 3,
+      "Validate inputs": 3
+    },
+    "thresholds": {
+      "failure_rate_pct": 10,
+      "avg_ms": 1500
+    },
+    "recommendations": [
+      "WF003: failure rate 25.0% > 10% \u2014 add input validation / retries.",
+      "WF004: avg 1996 ms > 1500 ms \u2014 cache data reads or batch LLM calls.",
+      "WF005: failure rate 15.0% > 10% \u2014 add input validation / retries.",
+      "WF007: failure rate 15.0% > 10% \u2014 add input validation / retries.",
+      "WF007: avg 1866 ms > 1500 ms \u2014 cache data reads or batch LLM calls."
+    ]
+  },
+  "message": "",
+  "total_ms": 12
+}

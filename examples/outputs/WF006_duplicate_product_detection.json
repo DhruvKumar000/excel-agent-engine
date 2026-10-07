@@ -1,0 +1,105 @@
+{
+  "request": "Find likely duplicate products in the catalog.",
+  "workflow_id": "WF006",
+  "workflow_name": "Duplicate Product Detection",
+  "selection_reason": "Keyword match on 'Duplicate Product Detection'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Load products",
+      "status": "ok",
+      "detail": "9 products",
+      "duration_ms": 0
+    },
+    {
+      "name": "Normalize names and SKUs",
+      "status": "ok",
+      "detail": "sku upper/no-dashes, name lower/no-punctuation",
+      "duration_ms": 1
+    },
+    {
+      "name": "Compare identifiers (exact SKU)",
+      "status": "ok",
+      "detail": "1 exact-SKU groups",
+      "duration_ms": 2
+    },
+    {
+      "name": "Compare product attributes (similarity)",
+      "status": "ok",
+      "detail": "2 similar pairs \u2265 0.85",
+      "duration_ms": 4
+    },
+    {
+      "name": "Group likely duplicates",
+      "status": "ok",
+      "detail": "3 total groups",
+      "duration_ms": 0
+    },
+    {
+      "name": "Assign confidence",
+      "status": "ok",
+      "detail": "definite=1.0, possible=similarity score",
+      "duration_ms": 0
+    }
+  ],
+  "output": {
+    "duplicate_groups": [
+      {
+        "type": "definite",
+        "confidence": 1.0,
+        "matched_on": "sku",
+        "products": [
+          {
+            "sku": "SKU-001",
+            "product_name": "Cotton T-Shirt White",
+            "category": "apparel"
+          },
+          {
+            "sku": "sku-001",
+            "product_name": "Cotton T Shirt - White",
+            "category": "apparel"
+          }
+        ]
+      },
+      {
+        "type": "possible",
+        "confidence": 0.97,
+        "matched_on": "name+category",
+        "products": [
+          {
+            "sku": "SKU-002",
+            "product_name": "Denim Jeans Blue",
+            "category": "apparel"
+          },
+          {
+            "sku": "SKU-009",
+            "product_name": "Denim Jeans - Blue",
+            "category": "apparel"
+          }
+        ]
+      },
+      {
+        "type": "possible",
+        "confidence": 0.97,
+        "matched_on": "name+category",
+        "products": [
+          {
+            "sku": "SKU-004",
+            "product_name": "Running Shoes Black",
+            "category": "footwear"
+          },
+          {
+            "sku": "SKU-010",
+            "product_name": "Running Shoe Black",
+            "category": "footwear"
+          }
+        ]
+      }
+    ],
+    "definite": 1,
+    "possible": 2
+  },
+  "message": "",
+  "total_ms": 9
+}

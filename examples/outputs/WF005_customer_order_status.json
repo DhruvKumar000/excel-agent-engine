@@ -1,0 +1,57 @@
+{
+  "request": "Where is order ORD-1001?",
+  "workflow_id": "WF005",
+  "workflow_name": "Customer Order Status",
+  "selection_reason": "Keyword match on 'Customer Order Status'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Validate identifier",
+      "status": "ok",
+      "detail": "identifier = ORD-1001",
+      "duration_ms": 0
+    },
+    {
+      "name": "Search order data",
+      "status": "ok",
+      "detail": "found ORD-1001 for riya@example.com",
+      "duration_ms": 1
+    },
+    {
+      "name": "Retrieve order status",
+      "status": "ok",
+      "detail": "status = Shipped",
+      "duration_ms": 0
+    },
+    {
+      "name": "Retrieve shipment information",
+      "status": "ok",
+      "detail": "carrier = BlueDart, tracking = BD123456789",
+      "duration_ms": 1
+    },
+    {
+      "name": "Summarize current status",
+      "status": "ok",
+      "detail": "Order ORD-1001 is Shipped. Shipped via BlueDart (tracking BD123456789), status: In Transit, ETA 2026-10-09.",
+      "duration_ms": 0
+    }
+  ],
+  "output": {
+    "order_id": "ORD-1001",
+    "customer_email": "riya@example.com",
+    "items": "Cotton T-Shirt White x2; Denim Jeans Blue x1",
+    "order_status": "Shipped",
+    "order_date": "2026-10-02",
+    "shipment": {
+      "order_id": "ORD-1001",
+      "carrier": "BlueDart",
+      "tracking_number": "BD123456789",
+      "shipment_status": "In Transit",
+      "eta": "2026-10-09"
+    },
+    "summary": "Order ORD-1001 is Shipped. Shipped via BlueDart (tracking BD123456789), status: In Transit, ETA 2026-10-09."
+  },
+  "message": "",
+  "total_ms": 2
+}

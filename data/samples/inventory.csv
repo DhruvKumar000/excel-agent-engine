@@ -1,0 +1,9 @@
+sku,product_name,category,current_stock,minimum_stock
+SKU-001,Cotton T-Shirt White,apparel,12,50
+SKU-002,Denim Jeans Blue,apparel,80,40
+SKU-003,Leather Wallet Brown,accessories,5,20
+SKU-004,Running Shoes Black,footwear,45,30
+SKU-005,Wool Scarf Grey,accessories,0,15
+SKU-006,Canvas Tote Bag,accessories,25,25
+SKU-007,Hooded Sweatshirt,apparel,18,35
+SKU-008,Sports Socks Pack,footwear,120,60

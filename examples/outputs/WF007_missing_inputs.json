@@ -1,0 +1,19 @@
+{
+  "request": "Create a campaign brief for the new collection.",
+  "workflow_id": "WF007",
+  "workflow_name": "Marketing Campaign Brief",
+  "selection_reason": "Keyword match on 'Marketing Campaign Brief'.",
+  "confidence": 0.95,
+  "status": "needs_input",
+  "steps": [
+    {
+      "name": "Validate inputs",
+      "status": "needs_input",
+      "detail": "Before I create the brief I need: campaign_goal, dates. Example: campaign_goal='Launch summer collection', dates='1\u201315 June'.",
+      "duration_ms": 0
+    }
+  ],
+  "output": null,
+  "message": "Before I create the brief I need: campaign_goal, dates. Example: campaign_goal='Launch summer collection', dates='1\u201315 June'.",
+  "total_ms": 0
+}

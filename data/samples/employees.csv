@@ -1,0 +1,6 @@
+employee_id,name,role,skills,workload_pct
+E01,Aarav,Backend Developer,python;sql;aws,45
+E02,Priya,Frontend Developer,react;ui;testing,70
+E03,Rohan,Full Stack Developer,python;react;sql;node,90
+E04,Sneha,Data Engineer,python;sql;ml,60
+E05,Vikram,DevOps Engineer,aws;devops;python,30

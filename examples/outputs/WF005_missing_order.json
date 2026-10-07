@@ -1,0 +1,25 @@
+{
+  "request": "Where is order ORD-9999?",
+  "workflow_id": "WF005",
+  "workflow_name": "Customer Order Status",
+  "selection_reason": "Keyword match on 'Customer Order Status'.",
+  "confidence": 0.7,
+  "status": "needs_input",
+  "steps": [
+    {
+      "name": "Validate identifier",
+      "status": "ok",
+      "detail": "identifier = ORD-9999",
+      "duration_ms": 0
+    },
+    {
+      "name": "Search order data",
+      "status": "needs_input",
+      "detail": "No order found for 'ORD-9999'. Please provide another Order ID or email.",
+      "duration_ms": 1
+    }
+  ],
+  "output": null,
+  "message": "No order found for 'ORD-9999'. Please provide another Order ID or email.",
+  "total_ms": 1
+}

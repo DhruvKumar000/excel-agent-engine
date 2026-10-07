@@ -1,0 +1,75 @@
+{
+  "request": "Which products need restocking?",
+  "workflow_id": "WF001",
+  "workflow_name": "Inventory Restock Check",
+  "selection_reason": "Keyword match on 'Inventory Restock Check'.",
+  "confidence": 0.7,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Load inventory",
+      "status": "ok",
+      "detail": "8 products loaded",
+      "duration_ms": 1
+    },
+    {
+      "name": "Compare current stock with minimum threshold",
+      "status": "ok",
+      "detail": "4 below threshold",
+      "duration_ms": 0
+    },
+    {
+      "name": "Identify low-stock products",
+      "status": "ok",
+      "detail": "Cotton T-Shirt White, Leather Wallet Brown, Wool Scarf Grey, Hooded Sweatshirt",
+      "duration_ms": 0
+    },
+    {
+      "name": "Calculate reorder quantity",
+      "status": "ok",
+      "detail": "reorder qty = (2 \u00d7 minimum) \u2212 current",
+      "duration_ms": 0
+    },
+    {
+      "name": "Generate restock list",
+      "status": "ok",
+      "detail": "4 items in restock list",
+      "duration_ms": 1
+    }
+  ],
+  "output": {
+    "products_requiring_restock": [
+      {
+        "sku": "SKU-001",
+        "product_name": "Cotton T-Shirt White",
+        "current_stock": 12,
+        "minimum_stock": 50,
+        "suggested_reorder_qty": 88
+      },
+      {
+        "sku": "SKU-003",
+        "product_name": "Leather Wallet Brown",
+        "current_stock": 5,
+        "minimum_stock": 20,
+        "suggested_reorder_qty": 35
+      },
+      {
+        "sku": "SKU-005",
+        "product_name": "Wool Scarf Grey",
+        "current_stock": 0,
+        "minimum_stock": 15,
+        "suggested_reorder_qty": 30
+      },
+      {
+        "sku": "SKU-007",
+        "product_name": "Hooded Sweatshirt",
+        "current_stock": 18,
+        "minimum_stock": 35,
+        "suggested_reorder_qty": 52
+      }
+    ],
+    "count": 4
+  },
+  "message": "",
+  "total_ms": 4
+}

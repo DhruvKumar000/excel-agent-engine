@@ -1,0 +1,85 @@
+{
+  "request": "Process this vendor spreadsheet and show invalid rows.",
+  "workflow_id": "WF003",
+  "workflow_name": "Vendor File Processing",
+  "selection_reason": "Keyword match on 'Vendor File Processing'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Read file",
+      "status": "ok",
+      "detail": "7 rows read from vendor_upload.csv",
+      "duration_ms": 0
+    },
+    {
+      "name": "Detect columns",
+      "status": "ok",
+      "detail": "Item Code, Product, Cost, Qty",
+      "duration_ms": 0
+    },
+    {
+      "name": "Normalize column names",
+      "status": "ok",
+      "detail": "Item Code\u2192sku | Product\u2192product_name | Cost\u2192price | Qty\u2192quantity",
+      "duration_ms": 0
+    },
+    {
+      "name": "Validate required fields",
+      "status": "ok",
+      "detail": "required columns present",
+      "duration_ms": 0
+    },
+    {
+      "name": "Identify invalid rows",
+      "status": "ok",
+      "detail": "3 invalid rows",
+      "duration_ms": 3
+    },
+    {
+      "name": "Produce cleaned dataset",
+      "status": "ok",
+      "detail": "cleaned file saved \u2192 vendor_cleaned.csv",
+      "duration_ms": 2
+    }
+  ],
+  "output": {
+    "cleaned_file": "examples/outputs/vendor_cleaned.csv",
+    "summary": {
+      "total_rows": 7,
+      "valid_rows": 4,
+      "invalid_rows": 3,
+      "columns_normalized": [
+        "Item Code",
+        "Product",
+        "Cost",
+        "Qty"
+      ]
+    },
+    "invalid_row_report": [
+      {
+        "sku": "",
+        "product_name": "Silk Tie Red",
+        "price": 699,
+        "quantity": 10,
+        "reason": "missing sku"
+      },
+      {
+        "sku": "SKU-104",
+        "product_name": "",
+        "price": 899,
+        "quantity": 30,
+        "reason": "missing product_name"
+      },
+      {
+        "sku": "SKU-106",
+        "product_name": "  ",
+        "price": 1299,
+        "quantity": 12,
+        "reason": "missing product_name"
+      }
+    ]
+  },
+  "message": "",
+  "total_ms": 6
+}

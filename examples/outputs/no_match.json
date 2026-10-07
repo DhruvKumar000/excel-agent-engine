@@ -1,0 +1,12 @@
+{
+  "request": "What is the weather today?",
+  "workflow_id": "NONE",
+  "workflow_name": "No matching workflow",
+  "selection_reason": "No workflow matched the request keywords.",
+  "confidence": 0.0,
+  "status": "error",
+  "steps": [],
+  "output": null,
+  "message": "I could not map this request to any known workflow. Try rephrasing or add the workflow to the Excel file.",
+  "total_ms": 0
+}

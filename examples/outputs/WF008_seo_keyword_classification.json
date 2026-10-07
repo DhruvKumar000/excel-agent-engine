@@ -1,0 +1,125 @@
+{
+  "request": "Classify these keywords and map them to pages.",
+  "workflow_id": "WF008",
+  "workflow_name": "SEO Keyword Classification",
+  "selection_reason": "Keyword match on 'SEO Keyword Classification'.",
+  "confidence": 0.7,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Read keywords",
+      "status": "ok",
+      "detail": "10 keywords, 3 categories",
+      "duration_ms": 3
+    },
+    {
+      "name": "Remove duplicates",
+      "status": "ok",
+      "detail": "removed 1 duplicates",
+      "duration_ms": 1
+    },
+    {
+      "name": "Classify search intent",
+      "status": "ok",
+      "detail": "{'transactional': 3, 'commercial': 2, 'informational': 2, 'navigational': 2}",
+      "duration_ms": 1
+    },
+    {
+      "name": "Map keywords to categories",
+      "status": "ok",
+      "detail": "{'accessories': 3, 'apparel': 2, 'footwear': 2, 'general': 2}",
+      "duration_ms": 1
+    },
+    {
+      "name": "Identify high-priority keywords",
+      "status": "ok",
+      "detail": "4 high-priority",
+      "duration_ms": 2
+    },
+    {
+      "name": "Export results",
+      "status": "ok",
+      "detail": "saved \u2192 keyword_report.csv",
+      "duration_ms": 3
+    }
+  ],
+  "output": {
+    "report_file": "examples/outputs/keyword_report.csv",
+    "keywords": [
+      {
+        "keyword": "buy cotton t-shirt online",
+        "monthly_volume": 4200,
+        "intent": "transactional",
+        "category": "apparel",
+        "priority": "high",
+        "recommended_page": "product page"
+      },
+      {
+        "keyword": "best running shoes 2026",
+        "monthly_volume": 3100,
+        "intent": "commercial",
+        "category": "footwear",
+        "priority": "high",
+        "recommended_page": "category / comparison page"
+      },
+      {
+        "keyword": "how to clean leather wallet",
+        "monthly_volume": 900,
+        "intent": "informational",
+        "category": "accessories",
+        "priority": "low",
+        "recommended_page": "blog article"
+      },
+      {
+        "keyword": "denim jeans price",
+        "monthly_volume": 2500,
+        "intent": "transactional",
+        "category": "apparel",
+        "priority": "high",
+        "recommended_page": "product page"
+      },
+      {
+        "keyword": "wool scarf vs cotton scarf",
+        "monthly_volume": 600,
+        "intent": "commercial",
+        "category": "accessories",
+        "priority": "low",
+        "recommended_page": "category / comparison page"
+      },
+      {
+        "keyword": "official store login",
+        "monthly_volume": 1500,
+        "intent": "navigational",
+        "category": "general",
+        "priority": "medium",
+        "recommended_page": "home / store page"
+      },
+      {
+        "keyword": "cheap hoodie deals",
+        "monthly_volume": 2800,
+        "intent": "transactional",
+        "category": "general",
+        "priority": "high",
+        "recommended_page": "product page"
+      },
+      {
+        "keyword": "what is a tote bag",
+        "monthly_volume": 400,
+        "intent": "informational",
+        "category": "accessories",
+        "priority": "low",
+        "recommended_page": "blog article"
+      },
+      {
+        "keyword": "running shoes near me",
+        "monthly_volume": 2200,
+        "intent": "navigational",
+        "category": "footwear",
+        "priority": "medium",
+        "recommended_page": "home / store page"
+      }
+    ]
+  },
+  "message": "",
+  "total_ms": 12
+}

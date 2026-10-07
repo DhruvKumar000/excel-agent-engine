@@ -1,0 +1,70 @@
+{
+  "request": "Assign this urgent task to the best available developer.",
+  "workflow_id": "WF009",
+  "workflow_name": "Employee Task Assignment",
+  "selection_reason": "Keyword match on 'Employee Task Assignment'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Understand task requirements",
+      "status": "ok",
+      "detail": "skills=['python', 'sql'] priority=high",
+      "duration_ms": 0
+    },
+    {
+      "name": "Compare employee skills",
+      "status": "ok",
+      "detail": "3 employees have all skills",
+      "duration_ms": 1
+    },
+    {
+      "name": "Check current workload",
+      "status": "ok",
+      "detail": "4 employees under 80% load",
+      "duration_ms": 0
+    },
+    {
+      "name": "Rank candidates",
+      "status": "ok",
+      "detail": "Aarav > Sneha > Rohan",
+      "duration_ms": 1
+    },
+    {
+      "name": "Select employee",
+      "status": "ok",
+      "detail": "selected Aarav",
+      "duration_ms": 0
+    },
+    {
+      "name": "Generate assignment summary",
+      "status": "ok",
+      "detail": "assigned to Aarav",
+      "duration_ms": 0
+    }
+  ],
+  "output": {
+    "recommended_employee": "Aarav",
+    "role": "Backend Developer",
+    "reasoning": "Aarav matches 100% of required skills (python, sql) and is at 45% workload (< 80%).",
+    "priority": "high",
+    "deadline": "Friday",
+    "task_summary": "Assign this urgent task to the best available developer.",
+    "runner_ups": [
+      {
+        "name": "Sneha",
+        "skill_match": 1.0,
+        "workload_pct": 60,
+        "score": 82.0
+      },
+      {
+        "name": "Rohan",
+        "skill_match": 1.0,
+        "workload_pct": 90,
+        "score": 73.0
+      }
+    ]
+  },
+  "message": "",
+  "total_ms": 4
+}

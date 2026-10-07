@@ -1,0 +1,120 @@
+{
+  "request": "Find products where vendor price differs by more than 10%.",
+  "workflow_id": "WF002",
+  "workflow_name": "Product Price Validation",
+  "selection_reason": "Keyword match on 'Product Price Validation'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Load product prices",
+      "status": "ok",
+      "detail": "8 products, 7 vendor prices",
+      "duration_ms": 1
+    },
+    {
+      "name": "Match products by SKU",
+      "status": "ok",
+      "detail": "7 matched, 1 unmatched",
+      "duration_ms": 1
+    },
+    {
+      "name": "Compare internal and vendor prices",
+      "status": "ok",
+      "detail": "absolute differences computed",
+      "duration_ms": 0
+    },
+    {
+      "name": "Calculate percentage difference",
+      "status": "ok",
+      "detail": "percentage differences computed",
+      "duration_ms": 0
+    },
+    {
+      "name": "Flag exceptions (> 10%)",
+      "status": "ok",
+      "detail": "3 exceptions flagged",
+      "duration_ms": 2
+    }
+  ],
+  "output": {
+    "threshold_pct": 10,
+    "matched_products": 7,
+    "exceptions": [
+      {
+        "sku": "SKU-003",
+        "product_name": "Leather Wallet Brown",
+        "price": 899,
+        "vendor_price": 1049,
+        "diff_pct": 16.69
+      },
+      {
+        "sku": "SKU-005",
+        "product_name": "Wool Scarf Grey",
+        "price": 699,
+        "vendor_price": 599,
+        "diff_pct": -14.31
+      },
+      {
+        "sku": "SKU-007",
+        "product_name": "Hooded Sweatshirt",
+        "price": 1299,
+        "vendor_price": 1499,
+        "diff_pct": 15.4
+      }
+    ],
+    "all_comparisons": [
+      {
+        "sku": "SKU-001",
+        "price": 499,
+        "vendor_price": 520,
+        "diff_pct": 4.21,
+        "exception": false
+      },
+      {
+        "sku": "SKU-002",
+        "price": 1999,
+        "vendor_price": 1850,
+        "diff_pct": -7.45,
+        "exception": false
+      },
+      {
+        "sku": "SKU-003",
+        "price": 899,
+        "vendor_price": 1049,
+        "diff_pct": 16.69,
+        "exception": true
+      },
+      {
+        "sku": "SKU-004",
+        "price": 2999,
+        "vendor_price": 2999,
+        "diff_pct": 0.0,
+        "exception": false
+      },
+      {
+        "sku": "SKU-005",
+        "price": 699,
+        "vendor_price": 599,
+        "diff_pct": -14.31,
+        "exception": true
+      },
+      {
+        "sku": "SKU-006",
+        "price": 399,
+        "vendor_price": 410,
+        "diff_pct": 2.76,
+        "exception": false
+      },
+      {
+        "sku": "SKU-007",
+        "price": 1299,
+        "vendor_price": 1499,
+        "diff_pct": 15.4,
+        "exception": true
+      }
+    ]
+  },
+  "message": "",
+  "total_ms": 5
+}

@@ -1,0 +1,76 @@
+{
+  "request": "Create a campaign brief for the new collection.",
+  "workflow_id": "WF007",
+  "workflow_name": "Marketing Campaign Brief",
+  "selection_reason": "Keyword match on 'Marketing Campaign Brief'.",
+  "confidence": 0.95,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Validate inputs",
+      "status": "ok",
+      "detail": "goal and dates present",
+      "duration_ms": 0
+    },
+    {
+      "name": "Identify campaign objective",
+      "status": "ok",
+      "detail": "objective type = awareness",
+      "duration_ms": 0
+    },
+    {
+      "name": "Summarize products",
+      "status": "ok",
+      "detail": "5 products: Cotton T-Shirt White, Denim Jeans Blue, Leather Wallet Brown...",
+      "duration_ms": 1
+    },
+    {
+      "name": "Create messaging",
+      "status": "ok",
+      "detail": "[MOCK LLM] Messaging: Fresh styles, limited time.\nChannels: Instagram, Email, Go",
+      "duration_ms": 0
+    },
+    {
+      "name": "Create channel recommendations",
+      "status": "ok",
+      "detail": "Instagram, Email, TikTok",
+      "duration_ms": 0
+    },
+    {
+      "name": "Create campaign checklist",
+      "status": "ok",
+      "detail": "7-item checklist created",
+      "duration_ms": 0
+    }
+  ],
+  "output": {
+    "objective": "Awareness \u2014 Launch autumn collection",
+    "audience": "young professionals",
+    "products": [
+      "Cotton T-Shirt White",
+      "Denim Jeans Blue",
+      "Leather Wallet Brown",
+      "Running Shoes Black",
+      "Wool Scarf Grey"
+    ],
+    "promotion": "15% off first order",
+    "messaging": "[MOCK LLM] Messaging: Fresh styles, limited time.\nChannels: Instagram, Email, Google Ads.\nChecklist: creatives, landing page, tracking, launch, review.",
+    "channels": [
+      "Instagram",
+      "Email",
+      "TikTok"
+    ],
+    "timeline": "15\u201330 Oct",
+    "checklist": [
+      "Finalise creatives",
+      "Build landing page",
+      "Set up tracking/UTMs",
+      "Schedule posts & emails",
+      "Launch",
+      "Mid-campaign review",
+      "Post-campaign report"
+    ]
+  },
+  "message": "",
+  "total_ms": 1
+}

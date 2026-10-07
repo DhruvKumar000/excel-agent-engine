@@ -1,0 +1,52 @@
+{
+  "request": "Generate SEO content for this product.",
+  "workflow_id": "WF004",
+  "workflow_name": "Product Description Generator",
+  "selection_reason": "Keyword match on 'Product Description Generator'.",
+  "confidence": 0.85,
+  "status": "success",
+  "steps": [
+    {
+      "name": "Validate required attributes",
+      "status": "ok",
+      "detail": "present: ['product_name', 'category', 'material', 'color'] | missing: ['attributes', 'target_audience']",
+      "duration_ms": 0
+    },
+    {
+      "name": "Create product description",
+      "status": "ok",
+      "detail": "[MOCK LLM] Linen Shirt Beige is designed for everyday comfort and durability. Ma",
+      "duration_ms": 0
+    },
+    {
+      "name": "Generate short description",
+      "status": "ok",
+      "detail": "[MOCK LLM] Linen Shirt Beige \u2014 simple, well-made and ready for everyday use.",
+      "duration_ms": 0
+    },
+    {
+      "name": "Generate SEO title",
+      "status": "ok",
+      "detail": "[MOCK LLM] Linen Shirt Beige | Buy Online",
+      "duration_ms": 0
+    },
+    {
+      "name": "Generate meta description",
+      "status": "ok",
+      "detail": "content package ready",
+      "duration_ms": 0
+    }
+  ],
+  "output": {
+    "product_description": "[MOCK LLM] Linen Shirt Beige is designed for everyday comfort and durability. Made with care using the details provided. [missing: attributes, target_audience]",
+    "short_description": "[MOCK LLM] Linen Shirt Beige \u2014 simple, well-made and ready for everyday use.",
+    "seo_title": "[MOCK LLM] Linen Shirt Beige | Buy Online",
+    "meta_description": "[MOCK LLM] Shop Linen Shirt Beige. Quality you can trust, delivered to your door.",
+    "missing_attributes_flagged": [
+      "attributes",
+      "target_audience"
+    ]
+  },
+  "message": "",
+  "total_ms": 0
+}
